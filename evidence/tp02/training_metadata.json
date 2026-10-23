@@ -1,0 +1,148 @@
+{
+  "selected_model": "random_forest",
+  "data_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "split_seed": 42,
+  "split_sizes": {
+    "train": 4225,
+    "valid": 1409,
+    "test": 1409
+  },
+  "features": {
+    "numeric": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical": [
+      "Contract",
+      "InternetService",
+      "PaymentMethod"
+    ]
+  },
+  "positive_class": "Churn=Yes (encoded as 1)",
+  "threshold": 0.5,
+  "preprocessing": {
+    "numeric": "SimpleImputer(median) -> StandardScaler",
+    "categorical": "SimpleImputer(constant='missing') -> OneHotEncoder(handle_unknown='ignore')"
+  },
+  "model_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 10,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "validation_metrics": {
+    "model": "random_forest",
+    "accuracy": 0.8027,
+    "precision": 0.6644,
+    "recall": 0.5187,
+    "f1": 0.5826,
+    "avg_precision": 0.6579,
+    "confusion_matrix": {
+      "TN": 937,
+      "FP": 98,
+      "FN": 180,
+      "TP": 194
+    },
+    "fit_seconds": 0.53
+  },
+  "all_results": [
+    {
+      "model": "baseline_majority",
+      "accuracy": 0.7346,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "avg_precision": 0.2654,
+      "confusion_matrix": {
+        "TN": 1035,
+        "FP": 0,
+        "FN": 374,
+        "TP": 0
+      },
+      "fit_seconds": 0.07
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.8041,
+      "precision": 0.6644,
+      "recall": 0.5294,
+      "f1": 0.5893,
+      "avg_precision": 0.6475,
+      "confusion_matrix": {
+        "TN": 935,
+        "FP": 100,
+        "FN": 176,
+        "TP": 198
+      },
+      "fit_seconds": 0.21
+    },
+    {
+      "model": "decision_tree",
+      "accuracy": 0.8006,
+      "precision": 0.6303,
+      "recall": 0.6016,
+      "f1": 0.6156,
+      "avg_precision": 0.6033,
+      "confusion_matrix": {
+        "TN": 903,
+        "FP": 132,
+        "FN": 149,
+        "TP": 225
+      },
+      "fit_seconds": 0.04
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.8027,
+      "precision": 0.6644,
+      "recall": 0.5187,
+      "f1": 0.5826,
+      "avg_precision": 0.6579,
+      "confusion_matrix": {
+        "TN": 937,
+        "FP": 98,
+        "FN": 180,
+        "TP": 194
+      },
+      "fit_seconds": 0.53
+    },
+    {
+      "model": "gradient_boosting",
+      "accuracy": 0.7956,
+      "precision": 0.6569,
+      "recall": 0.4813,
+      "f1": 0.5556,
+      "avg_precision": 0.6336,
+      "confusion_matrix": {
+        "TN": 941,
+        "FP": 94,
+        "FN": 194,
+        "TP": 180
+      },
+      "fit_seconds": 1.03
+    }
+  ],
+  "environment": {
+    "python": "3.11.17 (main, Oct  1 2026, 15:41:07) [GCC 13.3.0]",
+    "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+    "scikit-learn": "1.5.2",
+    "pandas": "2.2.3",
+    "numpy": "1.26.4"
+  }
+}

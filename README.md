@@ -50,11 +50,32 @@ Il s'agit d'une **photographie clients à un instant donné**, pas d'un journal 
 | `tests/` | Vérifications comportementales |
 | `data/raw/` | Snapshot d'entrée original + métadonnées de source |
 | `data/processed/` | Splits générés (TP suivants) |
-| `artifacts/` | Modèles entraînés (TP suivants) |
+| `artifacts/` | Modèles entraînés (pipeline.joblib) |
 | `reports/` | Rapports générés (gitignoré) |
 | `k8s/`, `pipelines/` | Déploiement et orchestration (TP suivants) |
 
+## TP02 - Training pipeline
+
+Entraîner et comparer les modèles :
+
+```sh
+uv run python scripts/train.py
+```
+
+Vérifier le reload de l'artefact (processus séparé, sans fit) :
+
+```sh
+uv run python scripts/verify_reload.py
+```
+
+Le script `train.py` produit :
+- `artifacts/pipeline.joblib` : pipeline sklearn complet (preprocessing + RandomForest)
+- `evidence/tp02/training_metadata.json` : seed, features, métriques, environnement
+- `evidence/tp02/comparison_table.json` : résultats des 5 modèles comparés
+- `evidence/tp02/customer_splits.json` : allocation des clients par split
+
+Features utilisées : `tenure`, `MonthlyCharges`, `TotalCharges` (numériques) + `Contract`, `InternetService`, `PaymentMethod` (catégorielles). Split 60/20/20 stratifié, seed 42.
+
 ## Reproductibilité : ce qui est fait, ce qui ne l'est pas
 
-Le lock + hash du CSV garantissent que deux personnes partent des mêmes paquets et des mêmes octets de données. Ils ne garantissent **pas** l'identité OS/CPU, la qualité des labels, ou la reproductibilité d'un entraînement ML (seeds, non-déterminisme GPU, ordres de données). Ces points sont traités dans les TP suivants.
-> Dernière vérification : TP01, octobre 2026.
+Le lock + hash du CSV garantissent que deux personnes partent des mêmes paquets et des mêmes octets de données. Ils ne garantissent **pas** l'identité OS/CPU, la qualité des labels, ou la reproductibilité d'un entraînement ML (seeds, non-déterminisme GPU, ordres de données).
