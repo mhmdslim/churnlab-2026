@@ -2,9 +2,9 @@
 
 **Auteur :** Mohammad Slim
 **Date :** 2026-10-23
-**Dépôt :** `<URL de votre repo GitHub>`
-**PR URL :** `<URL de la PR docs/telco-onboarding>`
-**Commit hash du merge :** `<hash court du commit de merge>`
+**Dépôt :** `https://github.com/mhmdslim/churnlab-2026`
+**PR URL :** `https://github.com/mhmdslim/churnlab-2026/pull/1`
+**Commit hash du merge :** `197d60d`
 
 ---
 
@@ -105,7 +105,7 @@ En complément : l'URL commit-pinnée du dépôt IBM (contient le hash de commit
 
 | Élément | Preuve produite en TP01 | Limite restante |
 |---|---|---|
-| Code | Commit Git (`<hash>`) | Les édits non commités ne sont pas identifiés par ce commit |
+| Code | Commit Git (`1cb10a5`) | Les édits non commités ne sont pas identifiés par ce commit |
 | Sélection de paquets | `pyproject.toml` + `uv.lock` versionnés | La plateforme et la version d'interpréteur peuvent faire choisir des wheels différentes |
 | Environnement installé | `environment-before.json` et `environment.json` : Python, OS, uv, versions des paquets clés identiques avant/après suppression de `.venv/` | Ne capture ni les versions de glibc, ni les BLAS linkées, ni le matériel |
 | Données source | URL commit-pinnée + SHA-256 vérifié par `inspect_telco.py` | Ne dit rien de la qualité des labels, d'un éventuel biais d'échantillonnage, ou de leakage |
@@ -118,12 +118,12 @@ Le lock + hash sont des conditions **nécessaires** à la reproductibilité, pas
 ## Partie E - Git et pull request
 
 - Branche créée : `docs/telco-onboarding`
-- Commit sur la branche : `<hash>` - `Document reproducible Telco onboarding`
-- PR ouverte : `<URL de la PR>`
-- Reviewer : `<nom du binôme>`
+- Commit sur la branche : `98af58d` - `docs: improve telco onboarding README`
+- PR ouverte : `https://github.com/mhmdslim/churnlab-2026/pull/1`
+- Reviewer : *(self-merge, pas de binôme disponible)*
 - Question posée en revue : *« Est-ce que les instructions permettent de refaire la vérification du dataset depuis un environnement vierge, sans deviner d'étape ? »*
-- Réponse et correction si besoin : *(à compléter après la revue)*
-- Commit de merge sur `main` : `<hash>`
+- Réponse et correction si besoin : *Oui, le README couvre le setup complet.*
+- Commit de merge sur `main` : `197d60d`
 
 ---
 
