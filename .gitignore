@@ -1,0 +1,24 @@
+# Python
+.venv/
+.venv-backup/
+.venv-backup-*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Data & artifacts (large / generated)
+data/raw/*.csv
+data/processed/
+artifacts/
+reports/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
