@@ -57,3 +57,4 @@ Il s'agit d'une **photographie clients à un instant donné**, pas d'un journal 
 ## Reproductibilité : ce qui est fait, ce qui ne l'est pas
 
 Le lock + hash du CSV garantissent que deux personnes partent des mêmes paquets et des mêmes octets de données. Ils ne garantissent **pas** l'identité OS/CPU, la qualité des labels, ou la reproductibilité d'un entraînement ML (seeds, non-déterminisme GPU, ordres de données). Ces points sont traités dans les TP suivants.
+> Dernière vérification : TP01, octobre 2026.
